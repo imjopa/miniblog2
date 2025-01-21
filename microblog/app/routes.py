@@ -22,7 +22,7 @@ def index():
             'body': 'I want to know if u know your name'
         }
     ]
-    return render_template('index.html', title = 'Home', user = user)
+    return render_template('index.html', title = 'Home Page', posts = posts)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
