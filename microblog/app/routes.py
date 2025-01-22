@@ -1,29 +1,28 @@
-from flask import render_template, flash, redirect, url_for, request
-from app import app
-from app.forms import LoginForm
-from flask_login import current_user, login_user, logout_user, login_required
-import sqlalchemy as sa
-from app import db
-from app.forms import RegistrationForm
-from app.models import User
 from urllib.parse import urlsplit
+from flask import render_template, flash, redirect, url_for, request
+from flask_login import login_user, logout_user, current_user, login_required
+import sqlalchemy as sa
+from app import app, db
+from app.forms import LoginForm, RegistrationForm
+from app.models import User
+
 
 @app.route('/')
 @app.route('/index')
 @login_required
 def index():
-    user = {'username': 'João'}
     posts = [
         {
-            'author': {'username': 'Peter'},
-            'body': 'I know my name'
+            'author': {'username': 'John'},
+            'body': 'Beautiful day in Portland!'
         },
         {
-            'author': {'username': 'Gwen'},
-            'body': 'I want to know if u know your name'
+            'author': {'username': 'Susan'},
+            'body': 'The Avengers movie was so cool!'
         }
     ]
-    return render_template('index.html', title = 'Home Page', posts = posts)
+    return render_template('index.html', title='Home', posts=posts)
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -40,14 +39,15 @@ def login():
         next_page = request.args.get('next')
         if not next_page or urlsplit(next_page).netloc != '':
             next_page = url_for('index')
-            return redirect(next_page)
-        return redirect(url_for('index'))
+        return redirect(next_page)
     return render_template('login.html', title='Sign In', form=form)
+
 
 @app.route('/logout')
 def logout():
     logout_user()
     return redirect(url_for('index'))
+
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
