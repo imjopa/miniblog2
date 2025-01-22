@@ -28,7 +28,7 @@ class User(UserMixin, db.Model):
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
     
-    def avatar (self, size):
+    def avatar(self, size):
         digest = md5(self.email.lower().encode('utf-8')).hexdigest()
         return f'https://www.gravatar.com/avatar/{digest}?d=identicon&s={size}'
 
