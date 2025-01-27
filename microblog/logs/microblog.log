@@ -1,0 +1,71 @@
+2025-01-27 11:18:41,676 INFO: Microblog Startup [in C:\Users\Estoque2\Documents\A\development\microblog\app\__init__.py:44]
+2025-01-27 11:18:45,972 ERROR: Exception on /edit_profile [GET] [in C:\Users\Estoque2\Documents\A\development\microblog\venv\Lib\site-packages\flask\app.py:875]
+Traceback (most recent call last):
+  File "C:\Users\Estoque2\Documents\A\development\microblog\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Estoque2\Documents\A\development\microblog\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Estoque2\Documents\A\development\microblog\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Estoque2\Documents\A\development\microblog\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Estoque2\Documents\A\development\microblog\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Estoque2\Documents\A\development\microblog\app\routes.py", line 88, in edit_profile
+    form = EditProfileForm(current_user.username)
+  File "C:\Users\Estoque2\Documents\A\development\microblog\venv\Lib\site-packages\wtforms\form.py", line 209, in __call__
+    return type.__call__(cls, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Estoque2\Documents\A\development\microblog\app\forms.py", line 45, in __init__
+    self.original._username = original_username
+    ^^^^^^^^^^^^^
+AttributeError: 'EditProfileForm' object has no attribute 'original'
+2025-01-27 11:18:48,313 ERROR: Exception on /edit_profile [GET] [in C:\Users\Estoque2\Documents\A\development\microblog\venv\Lib\site-packages\flask\app.py:875]
+Traceback (most recent call last):
+  File "C:\Users\Estoque2\Documents\A\development\microblog\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Estoque2\Documents\A\development\microblog\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Estoque2\Documents\A\development\microblog\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Estoque2\Documents\A\development\microblog\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Estoque2\Documents\A\development\microblog\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Estoque2\Documents\A\development\microblog\app\routes.py", line 88, in edit_profile
+    form = EditProfileForm(current_user.username)
+  File "C:\Users\Estoque2\Documents\A\development\microblog\venv\Lib\site-packages\wtforms\form.py", line 209, in __call__
+    return type.__call__(cls, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Estoque2\Documents\A\development\microblog\app\forms.py", line 45, in __init__
+    self.original._username = original_username
+    ^^^^^^^^^^^^^
+AttributeError: 'EditProfileForm' object has no attribute 'original'
+2025-01-27 11:18:53,457 ERROR: Exception on /edit_profile [GET] [in C:\Users\Estoque2\Documents\A\development\microblog\venv\Lib\site-packages\flask\app.py:875]
+Traceback (most recent call last):
+  File "C:\Users\Estoque2\Documents\A\development\microblog\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Estoque2\Documents\A\development\microblog\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Estoque2\Documents\A\development\microblog\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Estoque2\Documents\A\development\microblog\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Estoque2\Documents\A\development\microblog\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Estoque2\Documents\A\development\microblog\app\routes.py", line 88, in edit_profile
+    form = EditProfileForm(current_user.username)
+  File "C:\Users\Estoque2\Documents\A\development\microblog\venv\Lib\site-packages\wtforms\form.py", line 209, in __call__
+    return type.__call__(cls, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Estoque2\Documents\A\development\microblog\app\forms.py", line 45, in __init__
+    self.original._username = original_username
+    ^^^^^^^^^^^^^
+AttributeError: 'EditProfileForm' object has no attribute 'original'
+2025-01-27 11:22:14,928 INFO: Microblog Startup [in C:\Users\Estoque2\Documents\A\development\microblog\app\__init__.py:44]
