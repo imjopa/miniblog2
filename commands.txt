@@ -5,6 +5,8 @@ pip install flask-sqlalchemy
 pip install flask-migrate
 pip install flask-login
 pip install email-validator
+pip install flask-mail
+pip install pyjwt
 
 flask db init
 flask db migrate -m "posts table"

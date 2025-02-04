@@ -9,6 +9,8 @@ from datetime import datetime, timezone
 from app.forms import EmptyForm
 from app.forms import PostForm
 from app.models import Post
+from app.forms import ResetPasswordRequestForm
+from app.email import send_password_reset_email
 
 
 
@@ -94,6 +96,21 @@ def register():
         flash('Congratulations, you are now a registered user!')
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
+
+@app.route('/reset_password_request', methods=['GET', 'POST'])
+def reset_password_request():
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
+    form = ResetPasswordRequestForm()
+    if form.validate_on_submit():
+        user = db.session.scalar(
+            sa.select(User).where(User.email == form.email.data))
+        if user:
+            send_password_reset_email(user)
+        flash('Check your email for the instructions to reset your password')
+        return redirect(url_for('login'))
+    return render_template('reset_password_request.html',
+                           title='Reset Password', form=form)
 
 @app.route('/user/<username>')
 @login_required
