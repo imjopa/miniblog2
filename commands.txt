@@ -7,6 +7,7 @@ pip install flask-login
 pip install email-validator
 pip install flask-mail
 pip install pyjwt
+pip install flask-moment
 
 flask db init
 flask db migrate -m "posts table"
