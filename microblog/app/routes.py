@@ -10,6 +10,16 @@ from app.forms import LoginForm, RegistrationForm, EditProfileForm, \
 from app.models import User, Post
 from app.email import send_password_reset_email
 from langdetect import detect, LangDetectException
+from app.translate import translate
+
+
+@app.route('/translate', methods=['POST'])
+@login_required
+def translate_text():
+    data = request.get_json()
+    return {'text': translate(data['text'],
+                              data['source_language'],
+                              data['dest_language'])}
 
 
 @app.before_request

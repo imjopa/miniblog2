@@ -70,3 +70,6 @@ Traceback (most recent call last):
 AttributeError: 'EditProfileForm' object has no attribute 'original'
 2025-01-27 11:22:14,928 INFO: Microblog Startup [in C:\Users\Estoque2\Documents\A\development\microblog\app\__init__.py:44]
 2025-01-27 12:24:21,481 INFO: Microblog Startup [in C:\Users\Estoque2\Documents\A\development\microblog\app\__init__.py:44]
+2025-03-20 08:26:08,763 INFO: Microblog startup [in C:\Users\Estoque2\Documents\A\development\microblog\app\__init__.py:53]
+2025-03-20 08:37:55,940 INFO: Microblog startup [in C:\Users\Estoque2\Documents\A\development\microblog\app\__init__.py:53]
+2025-03-20 08:56:53,672 INFO: Microblog startup [in C:\Users\Estoque2\Documents\A\development\microblog\app\__init__.py:53]

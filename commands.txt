@@ -10,6 +10,7 @@ pip install pyjwt
 pip install flask-moment
 pip install flask-babel
 pip install langdetect
+pip install requests
 
 flask db init
 flask db migrate -m "posts table"
