@@ -10,6 +10,7 @@ from config import Config
 from flask_moment import Moment
 from flask_babel import Babel, lazy_gettext as _l
 
+
 def get_locale():
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
@@ -23,6 +24,12 @@ babel = Babel(app, locale_selector=get_locale)
 login = LoginManager(app)
 login.login_view = 'login'
 mail = Mail(app)
+
+from app.auth import bp as auth_bp
+app.register_blueprint(auth_bp, url_prefix='/auth')
+
+from app.errors import bp as errors_bp
+app.register_blueprint(errors_bp)
 
 if not app.debug:
     if app.config['MAIL_SERVER']:
@@ -52,4 +59,4 @@ if not app.debug:
     app.logger.setLevel(logging.INFO)
     app.logger.info('Microblog startup')
 
-from app import routes, models, errors
+from app import routes, models
